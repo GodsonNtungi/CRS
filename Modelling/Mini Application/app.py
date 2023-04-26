@@ -26,6 +26,7 @@ if submit:
     output = [[model.classes_[index], round(value * 100, 2)] for index, value in enumerate(prediction[0])]
     output.sort(key=lambda x: x[1], reverse=True)
     font_size = 25
+    print(model.classes_)
     for output_list in output:
         if font_size != 12:
             font_size -= 2

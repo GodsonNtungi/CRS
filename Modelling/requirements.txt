@@ -1,0 +1,6 @@
+pandas
+sklearn
+joblib
+seaborn
+pandas-profiling
+matplotlib

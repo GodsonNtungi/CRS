@@ -6,12 +6,14 @@ def home(request):
 
 
 def bylocation(request):
-    return render(request, 'bylocation.html')
+    return render(request, 'bylocation.html', {})
 
 
 def bysoil(request):
-    return render(request, 'bysoil.html')
+    return render(request, 'bysoil.html', {})
 
 
 def bycrop(request):
-    return render(request, 'bycrop.html')
+    return render(request, 'bycrop.html', {})
+
+

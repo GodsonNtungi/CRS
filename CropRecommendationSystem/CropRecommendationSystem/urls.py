@@ -25,4 +25,5 @@ urlpatterns = [
     path('Bysoil/', views.bysoil, name='Bysoil'),
     path('Bycrop/', views.bycrop, name='Bycrop'),
 
+
 ]

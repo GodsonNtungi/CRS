@@ -4,8 +4,8 @@ from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
 import sklearn
 
-scaler = jb.load("../Models/scaler.joblib")
-model: RandomForestClassifier = jb.load("../Models/modelv1.joblib")
+scaler = jb.load("scaler.joblib")
+model: RandomForestClassifier = jb.load("modelv1.joblib")
 
 st.header("Crop Recommender Model")
 

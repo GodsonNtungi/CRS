@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://E:/CRS/.idea/Crop Recommendation System.iml" filepath="E:/CRS/.idea/Crop Recommendation System.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/CropRecommendationSystem.iml" filepath="$PROJECT_DIR$/.idea/CropRecommendationSystem.iml" />
     </modules>
   </component>

@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from app import views
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -24,6 +24,7 @@ urlpatterns = [
     path('Bylocation/', views.bylocation, name='Bylocation'),
     path('Bysoil/', views.bysoil, name='Bysoil'),
     path('Bycrop/', views.bycrop, name='Bycrop'),
+    path('services/', views.services, name='services'),
 
 
 ]

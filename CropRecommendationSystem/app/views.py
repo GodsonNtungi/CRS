@@ -7,9 +7,12 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'home.html', {})
 
-
 def bylocation(request):
-    return render(request, 'bylocation.html')
+    return render(request, 'bylocation.html', {})
+
+
+def services(request):
+    return render(request, 'services.html')
 
 
 def bysoil(request):
@@ -18,3 +21,4 @@ def bysoil(request):
 
 def bycrop(request):
     return render(request, 'bycrop.html')
+

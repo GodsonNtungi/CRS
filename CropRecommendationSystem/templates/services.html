@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container h-25 " >
+    <h2>Services</h2>
+    <br/><br/><br/><br/><br/><br/><br/>
+<div class="d-flex flex-row justify-content-center">
+
+<br/>
+<br/>
+<button type="button" class="btn btn-success btn-lg mr-2 "
+        onclick="window.location.href={% url 'Bycrop' %}">Crop Recommendation
+</button>
+<br/>
+<br/>
+<button type="button" class="btn btn-secondary btn-lg mr-2"
+         onclick="window.location.href={% url 'Bysoil' %}">soil requirement and properties
+</button>
+<br/>
+<br/>
+<button type="button" class="btn btn-danger btn-lg mr-2"
+         onclick="window.location.href={% url 'Bylocation' %}">Crop location identification
+</button>
+<br/>
+<button type="button" class="btn btn-info btn-lg mr-2"
+         onclick="window.location.href='#'">Other services
+</button>
+{% comment %} <br/><br/><br/><br/><br/><br/> {% endcomment %}
+</div>
+</div>
+
+<br/><br/><br/><br/><br/><br/>
+{% endblock content %}

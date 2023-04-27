@@ -24,5 +24,7 @@ urlpatterns = [
     path('Bylocation/', views.bylocation, name='Bylocation'),
     path('Bysoil/', views.bysoil, name='Bysoil'),
     path('Bycrop/', views.bycrop, name='Bycrop'),
+    path('services/', views.services, name='services'),
+
 
 ]

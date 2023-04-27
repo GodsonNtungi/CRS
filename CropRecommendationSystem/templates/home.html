@@ -1,22 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
- <h1>CRS For Precision Agriculture</h1>
-    <br/>
-    <br/>
-    <button type="button" class="btn btn-primary btn-lg"
-            onclick="window.location.href={% url 'Bylocation' %}">By location
-    </button>
-    <br/>
-    <br/>
-    <button type="button" class="btn btn-secondary btn-lg"
-             onclick="window.location.href={% url 'Bysoil' %}">By soil
-    </button>
-    <br/>
-    <br/>
-    <button type="button" class="btn btn-success btn-lg"
-             onclick="window.location.href={% url 'Bycrop' %}">By crop
-    </button>
-    <br/>
+{% load static %}
+
+<div class="container " id="bg" style="background-image": url('{% static "images/123.jpg" %}');  >
+  {% comment %} <div class="jumbotron"> {% endcomment %}
+    <h1 class="display-4">Improving Agriculture</h1>
+    <p class="lead">Our system is designed to help farmers make informed decisions about which crops to plant based on a variety of factors, including soil type, and climate conditions.
+       Using advanced algorithms and data analysis, we provide personalized recommendations that can help optimize crop yields and maximize profits.</p>
+       <button type="button" class="btn btn-danger btn-lg "
+       onclick="window.location.href={% url 'services' %}">Services</button>
+       <br/><br/><br/><br/><br/><br/>
+      
+    {% comment %} </div> {% endcomment %}
+
+</div>
 
 {% endblock %}

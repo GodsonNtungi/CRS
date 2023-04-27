@@ -1,12 +1,9 @@
-{% extends 'base.html' %}
-
-{% block content %}
- <div class="container bg-success  "  >
-
+<div class="container bg-success  "  >
+    {% include 'navbar.html' %}      
 <div class="d-flex flex-row justify-content-center pb-4">
 <div class="bg-light p-3 mx-3 col-md-5 justify-content-center ">
     <h2 type="button" class="btn btn-success">CROP RECOMMENDATION</h2>
-
+   
     <ul class="nav flex-column">
     <li class="nav flex-column">
             <label for="range-input">Amount of Nitrogen</label>
@@ -18,7 +15,7 @@
      <input type="range" name="range-input" id="range-input" min="0" max="100" step="1">
     <span id="range-value"></span>
     </li>
-
+    
     <li class="nav flex-column">
             <label for="range-input">Amount of Potassium</label>
      <input type="range" name="range-input" id="range-input" min="0" max="100" step="1">
@@ -55,7 +52,7 @@
 
 <div class="bg-light p-3 mx-3 justify-content-end col-md-5 justify-content-center ">
     <h2 type="button" class="btn btn-success">RESULTS</h2>
-
+   
           <div class="media">
 <img src="img_avatar1.png" class="align-self-center mr-3" style="width:60px">
 <div class="media-body">
@@ -84,6 +81,3 @@
 </div>
 </div>
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    
-
-{% endblock %}

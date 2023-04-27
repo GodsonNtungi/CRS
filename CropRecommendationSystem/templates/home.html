@@ -1,19 +1,64 @@
 {% extends 'base.html' %}
 
-{% block content %}
 {% load static %}
 
-<div class="container " id="bg" style="background-image": url('{% static "images/123.jpg" %}');  >
-  {% comment %} <div class="jumbotron"> {% endcomment %}
-    <h1 class="display-4">Improving Agriculture</h1>
-    <p class="lead">Our system is designed to help farmers make informed decisions about which crops to plant based on a variety of factors, including soil type, and climate conditions.
-       Using advanced algorithms and data analysis, we provide personalized recommendations that can help optimize crop yields and maximize profits.</p>
-       <button type="button" class="btn btn-danger btn-lg "
-       onclick="window.location.href={% url 'services' %}">Services</button>
-       <br/><br/><br/><br/><br/><br/>
-      
-    {% comment %} </div> {% endcomment %}
 
-</div>
+
+
+{% block content %}
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+              margin: 0;
+              padding: 0;
+            }
+            .bg-image {
+              background-image: url('/static/crops.jpg');
+              height: 100vh;
+              background-position: center;
+              background-size: cover;
+              position: relative;
+            }
+            .my-text-center{
+                text-align:left;
+
+                z-index: 2;
+
+            }
+            .overlay{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 45%;
+                height: 100%;
+                background-color: rgba(48, 152, 48, 0.8);
+                z-index: 1;
+              }
+          </style>
+
+    </head>
+    <body>
+
+
+    <!-- Background image -->
+    <div class="bg-image">
+        <div class="overlay"></div>
+        <div class="container d-flex align-items-center  h-100">
+          <div class="my-text-center text-white">
+            <h1>IMPROVING AGRICULTURE</h1>
+            <p>Our system is designed  to help farmers make informed decions
+            about which </br>crops to plant on variety of factors,including soil type,and climatic conditions
+            </br>.using advanced algorithms and daata analysis,we provide personalized</br>
+             recomendetions that can help optimize crop yields and maximize profits. <br/></p>
+              <button type="button" class="btn btn-danger btn-lg "
+       onclick="window.location.href={% url 'services' %}">Services</button>
+          </div>
+
+        </div>
+      </div>
+
+        <script src="js/bootstrap.min.js"></script>
+
 
 {% endblock %}

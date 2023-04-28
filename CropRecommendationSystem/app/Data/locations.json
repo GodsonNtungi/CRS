@@ -1,0 +1,25 @@
+{
+  "apple": ["Southern Highlands", "Usambara Mountains"],
+  "banana": ["Coastal Regions", "Kilimanjaro Region"],
+  "blackgram": ["Central Tanzania", "Northern Tanzania"],
+  "chickpea": ["Singida", "Dodoma", "Tabora"],
+  "coconut": ["Zanzibar", "Coastal Regions"],
+  "coffee": ["Kilimanjaro Region", "Arusha Region", "Mbeya Region"],
+  "cotton": ["Lake Zone", "Mbeya", "Coastal Zone"],
+  "grapes": ["Southern Highlands", "Usambara Mountains"],
+  "jute": ["Dar es Salaam", "Tanga"],
+  "kidneybeans": ["Lake Zone", "Singida", "Dodoma"],
+  "lentil": ["Singida", "Dodoma"],
+  "maize": ["Lake Zone", "Coastal Zone", "Mbeya"],
+  "mango": ["Coastal Zone", "Kilimanjaro Region", "Arusha Region"],
+  "mothbeans": ["Singida", "Dodoma"],
+  "mungbean": ["Central Tanzania", "Northern Tanzania"],
+  "muskmelon": ["Coastal Zone", "Mbeya"],
+  "orange": ["Coastal Zone", "Kilimanjaro Region", "Arusha Region"],
+  "papaya": ["Coastal Zone"],
+  "pigeonpeas": ["Lake Zone", "Singida", "Dodoma"],
+  "pomegranate": ["Southern Highlands", "Usambara Mountains"],
+  "rice": ["Lake Zone", "Coastal Zone"],
+  "watermelon": ["Coastal Zone"]
+}
+

@@ -2,6 +2,7 @@
 
 {% load static %}
 
+{% load bootstrap4 %}
 
 
 
@@ -14,11 +15,13 @@
               padding: 0;
             }
             .bg-image {
-              background-image: url('/static/crops.jpg');
+              background-image: url("{% static 'crops.webp' %}");
               height: 100vh;
               background-position: center;
               background-size: cover;
               position: relative;
+                padding: 0;
+                margin-top: -24px;
             }
             .my-text-center{
                 text-align:left;
@@ -42,12 +45,12 @@
 
 
     <!-- Background image -->
-    <div class="bg-image">
+    <div class="bg-image container-fluid " >
         <div class="overlay"></div>
-        <div class="container d-flex align-items-center  h-100">
+        <div class="container d-flex align-items-center  h-100 mx-auto "  >
           <div class="my-text-center text-white">
             <h1>IMPROVING AGRICULTURE</h1>
-            <p>Our system is designed  to help farmers make informed decions
+            <p ">Our system is designed  to help farmers make informed decions
             about which </br>crops to plant on variety of factors,including soil type,and climatic conditions
             </br>.using advanced algorithms and daata analysis,we provide personalized</br>
              recomendetions that can help optimize crop yields and maximize profits. <br/></p>

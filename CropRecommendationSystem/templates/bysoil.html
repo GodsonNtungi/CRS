@@ -2,39 +2,62 @@
 
 {% block content %}
 
-    <h3>Write the name of the crop you want to see their soil requirements</h3>
+    <h3 class="text-white">Write the name of the crop you want to see their soil requirements</h3>
 
     <br/>
 
-    <div>
-  <form>
-      <label for="user-input" > </label>
-    <input type="text" id="user-input" name="user-input" style="width: 20%;">
+    <div class="container">
+  <form action="{%url 'Bysoil' %}" method="POST">
+         {% csrf_token %}
+
+
+    <div class="input-group input-group-lg">
+  <span class="input-group-text" id="inputGroup-sizing-lg">Input Crop</span>
+  <input type="text" name="crop" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+</div>
       <br/>
       <br/>
-    <button class="btn btn-outline-light" type="submit">Submit crop</button>
+    <input class="btn btn-outline-light" type="submit" value="Submit Crop" name="submit">
   </form>
   <div  id="output-area" style="border: 1px solid black; padding: 18px; background-color: white;">
-    Results will be displayed here.
+    Results
+      {% if soil_data%}
+      <br>
+      Phosphorus {{soil_data.P}} mg
+      <br>
+      Nitrogen {{soil_data.N}} mg
+      <br>
+      Potassium {{soil_data.K}} mg
+      <br>
+      Humidity {{soil_data.humidity}}  g/m³
+      <br>
+      Temperature {{soil_data.temperature}} °C
+      <br>
+      Ph {{soil_data.ph}}
+      <br>
+      Rainfall {{soil_data.rainfall}} mm
+
+
+      {%endif%}
   </div>
 </div>
 
-<script>
-  const form = document.querySelector('form');
-  const userInput = document.getElementById('user-input');
-  const outputArea = document.getElementById('output-area');
+<!--<script>-->
+<!--  const form = document.querySelector('form');-->
+<!--  const userInput = document.getElementById('user-input');-->
+<!--  const outputArea = document.getElementById('output-area');-->
 
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
+<!--  form.addEventListener('submit', (event) => {-->
+<!--    event.preventDefault();-->
 
-    const inputText = userInput.value;
-    // perform some operation using the input
-    const outputText = ` ${inputText.toString()} requires a soil with these properties...`;
-    outputArea.textContent = outputText;
+<!--    const inputText = userInput.value;-->
+<!--    // perform some operation using the input-->
+<!--    const outputText = ` ${inputText.toString()} requires a soil with these properties...`;-->
+<!--    outputArea.textContent = outputText;-->
 
-    userInput.value = '';
-  });
-</script>
+<!--    userInput.value = '';-->
+<!--  });-->
+<!--</script>-->
 
 
 

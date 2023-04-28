@@ -4,6 +4,8 @@
 
 {% block content %}
 
+{%load static%}
+
 
 <div class="d-flex flex-row justify-content-center pb-4 pt-5">
 <div class="bg-light p-3 mx-3 col-md-5 justify-content-center ">
@@ -12,49 +14,61 @@
     </div>
 
     <ul class="nav flex-column">
+        <form action="{% url 'Bycrop' %}" method="POST">
+            {% csrf_token %}
     <li class="nav flex-column mb-4 mt-4">
+
             <label for="nitrogen-input">Amount of Nitrogen</label>
-     <input type="range" name="nitrogen-input" id="nitrogen-input" min="0" max="100" step="1">
-    <span id="nitrogen-value"></span>
-    </li>
-<<<<<<< HEAD
-    <li class="nav flex-column mb-4">
-            <label for="phosphorus-input">Amount of Phosphorus</label>
-     <input type="range" name="phosphorus-input" id="phosphorus-input" min="0" max="100" step="1">
-    <span id="phosphorus-value"></span>
-=======
-    <li class="nav flex-column">
-            <label for="range-input">Amount of Phosphorus</label>
-     <input type="range" name="range-input2" id="range-input2" min="0" max="100" step="1">
-    <span id="range-value2"></span>
->>>>>>> magembe/master
+     <input type="range" name="N" id="nitrogen-input" min="0" max="300" step="1">
+      <div class="d-flex"><span id="nitrogen-value" class="fw-bold fs-5 px-2"></span>
+        <span  class="fw-bold fs-5"> mg </span></div>
     </li>
 
     <li class="nav flex-column mb-4">
+            <label for="phosphorus-input">Amount of Phosphorus</label>
+     <input type="range" name="P" id="phosphorus-input" min="0" max="300" step="1">
+     <div class="d-flex"><span id="phosphorus-value" class="fw-bold fs-5 px-2"></span>
+        <span  class="fw-bold fs-5"> mg </span></div>
+    </li>
+
+
+    <li class="nav flex-column mb-4">
             <label for="potassium-input">Amount of Potassium</label>
-     <input type="range" name="potassium-input" id="potassium-input" min="0" max="100" step="1">
-    <span id="potassium-value"></span>
+     <input type="range" name="K" id="potassium-input" min="0" max="300" step="1">
+    <div class="d-flex"><span id="potassium-value" class="fw-bold fs-5 px-2"></span>
+        <span  class="fw-bold fs-5"> mg </span></div>
+
     </li>
     <li class="nav flex-column mb-4">
             <label for="temperature-input">Temperature</label>
-     <input type="range" name="temperature-input" id="temperature-input" min="0" max="100" step="1">
-    <span id="temperature-value"></span>
+     <input type="range" name="temperature" id="temperature-input" min="0" max="50" step="1">
+      <div class="d-flex"><span id="temperature-value" class="fw-bold fs-5 px-2"></span>
+        <span  class="fw-bold fs-5"> ° C </span></div>
+    </li>
+            <li class="nav flex-column mb-4">
+            <label for="humidity-input">Humidity</label>
+     <input type="range" name="humidity" id="humidity-input" min="0" max="300" step="1">
+      <div class="d-flex"><span id="humidity-value" class="fw-bold fs-5 px-2"></span>
+        <span  class="fw-bold fs-5"> g/m³ </span></div>
     </li>
     <li class="nav flex-column mb-4">
             <label for="ph-input">PH</label>
-     <input type="range" name="ph-input" id="ph-input" min="0" max="14" step="0.1">
-    <span id="ph-value"></span>
+     <input type="range" name="ph" id="ph-input" min="0" max="14" step="0.1">
+     <div class="d-flex"><span id="ph-value" class="fw-bold fs-5 px-2"></span>
+
     </li>
     <li class="nav flex-column mb-4">
             <label for="rainfall-input">Amount of Rainfall</label>
-     <input type="range" name="rainfall-input" id="rainfall-input" min="0" max="2000" step="1">
-    <span id="rainfall-value"></span>
+     <input type="range" name="rainfall" id="rainfall-input" min="0" max="500" step="1">
+      <div class="d-flex"><span id="rainfall-value" class="fw-bold fs-5 px-2"></span>
+        <span  class="fw-bold fs-5"> mm </span></div>
     </li>
     </ul>
 
     <div class="justify-content-center ml-5">
-    <h2 type="button" class="btn btn-secondary ">Recommend</h2>
+    <input type="submit" class="btn btn-secondary" name= "Recommend" value="Recommend">
     </div>
+    </form>
 </div>
 <script>
 
@@ -83,6 +97,15 @@
 
     rangeInputp.addEventListener("input", function() {
         rangeValuep.textContent = rangeInputp.value;
+    });
+</script>
+            <script>
+
+    var rangeInputh = document.getElementById("humidity-input");
+    var rangeValueh = document.getElementById("humidity-value");
+
+    rangeInputh.addEventListener("input", function() {
+        rangeValueh.textContent = rangeInputh.value;
     });
 </script>
 
@@ -119,40 +142,26 @@
     });
 </script>
 
-
+{%if output %}
 <div class="bg-light p-3 mx-3 justify-content-end col-md-5 justify-content-center ">
     <div class="justify-content-center ml-5">
     <h2 type="button" class="btn btn-success  font-weight-bold">RESULTS</h2>
     </div>
+    {% for out in output%}
+    <div class="card" style="width: 18rem;">
+  <img src="{{out.link}}" class="card-img-top" alt="...">
+  <div class="card-body">
+   <h5>{{out.plant}}</h5>
+     <div class="d-flex"><p class="px-2">Compatibility </p> <h4>{{out.percent}} %</h4> </div>
+<p>More Information</p>
+  </div>
+</div>
 
-          <div class="media">
-<img src="img_avatar1.png" class="align-self-center mr-3" style="width:60px">
-<div class="media-body">
-<h5>Tomatoes</h5>
-<h4>Compatibility</h4>
-<p>More nformation</p>
-</div>
-</div>
-<div class="media">
-<img src="img_avatar1.png" class="align-self-center mr-3" style="width:60px">
-<div class="media-body">
-<h5>Apples</h5>
-<h4>Compatibility</h4>
-<p>More nformation</p>
-</div>
-</div>
-<div class="media">
-<img src="img_avatar1.png" class="align-self-center mr-3" style="width:60px">
-<div class="media-body">
-<h5>Bananas</h5>
-<h4>Compatibility</h4>
-<p>More information</p>
-</div>
-</div>
+{%endfor%}
 </div>
 </div>
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    
+{%endif%}
 
 {% endblock %}

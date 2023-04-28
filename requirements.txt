@@ -2,3 +2,4 @@ django
 scikit-learn
 joblib
 django-bootstrap4
+pandas
